@@ -1,0 +1,70 @@
+.home{
+    height: 100vh;
+    z-index: 100;
+    width: 100%;
+    padding-top: 2.5rem;
+}
+.home::before{
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(../../../public/assets/ezgif.com-gif-maker.gif) no-repeat;
+    opacity: 0.2;
+    background-position: center;
+    background-size: cover;
+    z-index: -100;
+}
+
+.btn{
+    box-shadow: 3px 2px 1rem rgba(4, 4, 155, 0.903);
+}
+.text_animated{
+    min-width: 30rem;
+}
+.text_animated span::before{
+    content: "Web Developer";
+    animation: word 20s infinite;
+}
+.text_animated span::after{
+    content: "";
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid orangered;
+    position: absolute;
+    background: white;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite ;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid indigo;
+    }
+}
+
+@keyframes word {
+    0%,20%{
+        content: "MERN Developer";
+    }
+    21%,40%{
+        content: "Frontend Developer";
+    }
+    41%,60%{
+        content: "Coder";
+    }
+    61%,80%{
+        content: "Backend Developer";
+    }
+    81%,100%{
+        content: "Java Developer";
+    }
+}
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
